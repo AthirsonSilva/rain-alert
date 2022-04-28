@@ -10,18 +10,18 @@ from dotenv import load_dotenv
 from twilio.http.http_client import TwilioHttpClient
 from twilio.rest import Client
 
+load_dotenv(find_dotenv())
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
 LAT = -23.534640
 LNG = -46.423770
-load_dotenv(find_dotenv())
-api_key = os.environ.get("OWM_API_KEY")
-account_sid = "AC3e11ff847021fcaea9eb2632457c9e71"
-auth_token = os.environ.get("2c001171121034fffd1e08d88e3a09a2")
+ACCOUNT_SID = os.environ.get("ACCOUNT_SID")
+AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
+API_KEY = os.environ.get("OWM_API_KEY")
 
 weather_params = {
     "lat": LAT,
     "lon": LNG,
-    "appid": api_key,
+    "appid": API_KEY,
     "exclude": "current,minutely,daily"
 }
 
